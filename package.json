@@ -1,0 +1,72 @@
+{
+  "name": "portpilot",
+  "version": "0.1.0",
+  "description": "A fast, cross-platform CLI for finding, inspecting, monitoring, and managing processes listening on local TCP ports.",
+  "type": "module",
+  "bin": {
+    "portpilot": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format:check": "prettier --check \"src/**/*.ts\" package.json tsconfig.json tsup.config.ts vitest.config.ts eslint.config.mjs README.md CONTRIBUTING.md SECURITY.md pnpm-workspace.yaml .prettierrc",
+    "typecheck": "tsc --noEmit",
+    "prepare": "pnpm build"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@11.22.0",
+  "keywords": [
+    "port",
+    "ports",
+    "tcp",
+    "cli",
+    "network",
+    "development",
+    "process",
+    "kill",
+    "debug",
+    "devops",
+    "monitoring"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coardian-software/PortPilot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Coardian-software/PortPilot/issues"
+  },
+  "homepage": "https://github.com/Coardian-software/PortPilot",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^15.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "^4.1.12",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.14.0",
+    "prettier": "^3.9.10",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^4.1.12"
+  }
+}
